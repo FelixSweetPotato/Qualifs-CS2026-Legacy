@@ -6,9 +6,13 @@
 package gui.barremenu;
 
 import domaine.Controleur;
+import domaine.Touche;
 import gui.InterfacePrincipale;
 import java.awt.event.ActionEvent;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.Writer;
 import javax.swing.AbstractAction;
 import javax.swing.JFileChooser;
 
@@ -29,7 +33,6 @@ public class ActionSauvegarderInstrument extends AbstractAction {
         JFileChooser choixFichier = new JFileChooser();
         choixFichier.setCurrentDirectory(null);
         int actionUtilisateur = choixFichier.showOpenDialog(interfacePrincipale);
-        
         if (actionUtilisateur == JFileChooser.APPROVE_OPTION) {
             File fichier = choixFichier.getSelectedFile();
             this.controleur.sauvegarderInstrument(fichier);
